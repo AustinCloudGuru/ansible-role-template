@@ -1,0 +1,23 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+  options: 
+    config-file: .molecule/resources/yamllint.yml
+platforms:
+  - name: ubuntu-18.04
+    image: ubuntu:18.04
+    privilaged: true
+    command: /sbin/init
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  directory: ../resources/tests
+  lint:
+    name: flake8

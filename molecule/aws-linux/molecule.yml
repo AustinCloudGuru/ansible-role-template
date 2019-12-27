@@ -1,0 +1,23 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: ec2
+lint:
+  name: yamllint
+  options:
+    config-file: ./molecule/resources/yamllint.yml
+platforms:
+  - name: ubuntu-18.04
+    image: ami-00a208c7cdba991ea
+    instance_type: t2.micro
+    vpc_subnet_id: subnet-6456fd1f
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  directory: ../resources/tests
+  lint:
+    name: flake8
