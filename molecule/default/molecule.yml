@@ -3,21 +3,18 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: yamllint
-  options: 
-    config-file: .molecule/resources/yamllint.yml
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
 platforms:
-  - name: ubuntu-18.04
-    image: ubuntu:18.04
-    privilaged: true
-    command: /sbin/init
+  - name: instance
+    image: ${MOLECULE_DISTRO}
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    command: /lib/systemd/systemd
 provisioner:
   name: ansible
-  lint:
-    name: ansible-lint
 verifier:
-  name: testinfra
-  directory: ../resources/tests
-  lint:
-    name: flake8
+  name: ansible
