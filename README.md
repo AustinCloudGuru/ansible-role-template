@@ -1,5 +1,8 @@
 Role Name
 =========
+[![Molecule](https://github.com/austincloudguru/ansible-role-template/workflows/Molecule/badge.svg?event=push)](https://github.com/austincloudguru/ansible-role-template/actions?query=workflow%3AMolecule)
+![Latest Version](https://img.shields.io/github/v/tag/austincloudguru/ansible-role-template?sort=semver&label=Latest%20Version) 
+[![License](https://img.shields.io/github/license/austincloudguru/ansible-role-template)](https://github.com/austincloudguru/ansible-role-template/blob/master/LICENSE)
 
 A brief description of the role goes here.
 
