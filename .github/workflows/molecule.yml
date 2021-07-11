@@ -1,5 +1,5 @@
 # ---
-# name: CI
+# name: Molecule
 # 'on':
 #   schedule:
 #     - cron: "0 8 * * *"
@@ -7,13 +7,13 @@
 #     branches:
 #       - master
 #   push:
-#     branches-ignore:
-#       - master
+#     paths-ignore:
+#       - '**/README.md'  
 
 
 # defaults:
 #   run:
-#     working-directory: 'ansible-role-splunk-forwarder'
+#     working-directory: 'ansible-role-'
 
 # jobs:
 
