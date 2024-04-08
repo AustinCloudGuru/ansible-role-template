@@ -2,7 +2,16 @@
 - name: Verify
   hosts: all
   gather_facts: false
-  vars:
+  # vars:
   vars_files:
     - "../../defaults/main.yml"
   tasks:
+    - name: Verify MOTD
+      ansible.builtin.shell: |
+        set -o pipefail
+        grep '!!!WARNING!!!' /etc/motd
+      args:
+        executable: /bin/bash
+      register: motd_settings
+      failed_when: motd_settings.rc != 0
+      changed_when: motd_settings.rc != 0
