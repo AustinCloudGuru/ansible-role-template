@@ -11,10 +11,10 @@ name: Release
     branches:
       - master
 
-defaults:
-  run:
-    # TODO: Update the Working Directory to the role name.
-    working-directory: 'acgcloudworks.template'
+# defaults:
+#   run:
+#     # TODO: Update the Working Directory to the role name.
+#     working-directory: 'acgcloudworks.template'
 
 jobs:
 
