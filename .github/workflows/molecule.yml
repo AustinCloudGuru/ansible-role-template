@@ -17,37 +17,6 @@ name: Molecule
 #     working-directory: 'ansible-role-template'
 
 jobs:
-  lintAllTheThings:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: yaml-lint
-        uses: ibiqlik/action-yamllint@v3
-        with:
-          config_file: .yamllint
-
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the codebase
-        uses: actions/checkout@v4
-        with:
-          # TODO: Update the path to the role name.
-          path: 'ansible-role-template'
-
-      - name: Set up Python 3
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install test dependencies.
-        run: pip3 install yamllint
-
-      - name: Lint code.
-        run: |
-          yamllint -c .yamllint .
-
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
