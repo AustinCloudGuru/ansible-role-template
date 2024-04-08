@@ -1,2 +1,15 @@
 ---
-# tasks file for ansible-role-template
+# -----------------------------------------------------------------------------
+# Set the Login Warning Banner
+# -----------------------------------------------------------------------------
+- name: Set Warning Banner for Standard Login Services
+  copy:
+    content: "{{ common_motd }}"
+    dest: "{{ item }}"
+    mode: 0644
+    backup: true
+  changed_when: false
+  with_items:
+    - /etc/motd
+    - /etc/issue
+    - /etc/issue.net
