@@ -8,7 +8,7 @@ name: Molecule
       - master
   push:
     paths-ignore:
-      - '**/README.md'  
+      - '**/README.md'
 
 
 # defaults:
