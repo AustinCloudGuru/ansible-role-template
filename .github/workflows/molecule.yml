@@ -66,6 +66,9 @@ jobs:
       - name: Install test dependencies.
         run: pip3 install ansible molecule podman ansible-lint flake8 "molecule-plugins[podman]"
 
+      - name: Install Podman
+        uses: gacts/install-podman@v1
+
       - name: Run Molecule tests.
         run: molecule test
         env:
