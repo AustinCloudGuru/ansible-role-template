@@ -11,10 +11,10 @@ name: Molecule
       - '**/README.md'  
 
 
-defaults:
-  run:
-    # TODO: Update the Working Directory to the role name.
-    working-directory: 'ansible-role-template'
+# defaults:
+#   run:
+#     # TODO: Update the Working Directory to the role name.
+#     working-directory: 'ansible-role-template'
 
 jobs:
 
