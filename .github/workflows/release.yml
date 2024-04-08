@@ -40,7 +40,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      # TODO: Uncomment the lines below if you wish to publish the role to Galaxy.
+        # TODO: Uncomment the lines below if you wish to publish the role to Galaxy.
       # - name: Install Ansible.
       #   run: pip3 install ansible-base
 
